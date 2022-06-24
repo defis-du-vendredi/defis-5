@@ -1,0 +1,432 @@
+//Personnage hauteur et largeur de 100px
+//div de 20px par 20px
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+body {
+  padding: 100px 100px;
+  font-family: sans-serif;
+}
+
+.arrow {
+  clip-path: polygon(50% 50%, 0 0, 0 100%);
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.gameboy {
+  position: relative;
+  background-color: red;
+  width: 500px;
+  height: 800px;
+  border-radius: 10px 10px 80px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .button.power {
+    $width: 25px;
+    $height: 15px;
+
+    position: absolute;
+    width: $width;
+    height: $height;
+
+    top: -$height;
+    left: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    &::before,
+    &::after {
+      display: block;
+      position: absolute;
+      content: "";
+
+      background-color: gray;
+    }
+
+    &::before {
+      width: calc($height / 2);
+      height: calc($height / 2);
+      top: 25%;
+
+      border-radius: 50%;
+    }
+
+    &::after {
+      width: 100%;
+      height: 50%;
+
+      border-radius: 2px 2px 0 0;
+    }
+  }
+
+  .screen_border {
+    position: relative;
+    width: 90%;
+    height: 40%;
+    margin-top: 40px;
+
+    background-color: #3b3e3b;
+    border-radius: 10px 10px 70px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #9d9d9f;
+
+    .power_logo {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+
+      height: 30px;
+      width: 45px;
+
+      left: 2px;
+      top: 90px;
+
+      & > * {
+        flex: 1 1 50%;
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .circle {
+          background-color: red;
+          width: 7px;
+          height: 7px;
+
+          margin-right: 3px;
+        }
+
+        .arrow {
+          width: 10px;
+          height: 10px;
+          background-color: #9d9d9f;
+        }
+      }
+
+      p {
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 0.7rem;
+      }
+    }
+
+    .screen {
+      background-color: #949b77;
+      height: 70%;
+      width: 79%;
+      border-radius: 5px;
+    }
+
+    .logo {
+      align-self: flex-start;
+      position: absolute;
+      bottom: 10px;
+      left: 47px;
+
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
+
+      p:nth-child(1) {
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 1.5rem;
+      }
+
+      p:nth-child(2) {
+        box-sizing: border-box;
+        height: 24px;
+        font-weight: bolder;
+        background-color: #9d9d9f;
+        color: #3b3e3b;
+        padding-top: 9px;
+      }
+    }
+  }
+
+  .nintendo {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-weight: bolder;
+
+    border: 1px white solid;
+    border-radius: 20px;
+    padding: 3px 15px;
+  }
+
+  .buttons_1 {
+    position: relative;
+    // background-color: green;
+    height: 150px;
+    width: 90%;
+
+    margin-top: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .cross {
+      width: 100px;
+      height: 100px;
+
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::before,
+      &::after {
+        display: block;
+        position: absolute;
+        content: "";
+        background-color: #6c6b6b;
+
+        border-radius: 5px;
+      }
+
+      &::before {
+        width: 100%;
+        height: 35px;
+      }
+
+      &::after {
+        height: 100%;
+        width: 35px;
+      }
+
+      .circle {
+        background-color: #34392b;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+      }
+
+      .button {
+        position: absolute;
+        // background-color: blue;
+        width: 35px;
+        height: 35px;
+        z-index: 2;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .arrow {
+          width: 20px;
+          height: 20px;
+          // margin-left: 10px;
+
+          background-color: #34392b;
+        }
+
+        &.up {
+          top: 0;
+          .arrow {
+            transform: rotate(-90deg);
+            margin-bottom: 16px;
+          }
+        }
+
+        &.right {
+          right: 0;
+
+          .arrow {
+            margin-left: 16px;
+          }
+        }
+
+        &.down {
+          bottom: 0;
+
+          .arrow {
+            transform: rotate(90deg);
+            margin-top: 16px;
+          }
+        }
+
+        &.left {
+          left: 0;
+
+          .arrow {
+            transform: rotate(180deg);
+            margin-right: 16px;
+          }
+        }
+      }
+    }
+    & > .button {
+      position: relative;
+      width: 125px;
+      height: 100%;
+      margin-right: 20px;
+      // background-color: royalblue;
+
+      & > div {
+        position: absolute;
+        // background-color: green;
+        width: 50%;
+        height: 50%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          text-transform: uppercase;
+          font-weight: bolder;
+          color: #464c3a;
+          font-size: 1.5rem;
+        }
+
+        div {
+          width: 45px;
+          height: 45px;
+          background-color: #6c6b6b;
+        }
+      }
+
+      & > div:nth-child(1) {
+        bottom: 12.5px;
+      }
+
+      & > div:nth-child(2) {
+        top: 12.5px;
+        right: 0;
+      }
+    }
+  }
+
+  .buttons_2 {
+    margin-top: 90px;
+    display: flex;
+    gap: 50px;
+
+    p {
+      position: relative;
+      font-weight: bolder;
+      color: #4c4837;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      width: 7ch;
+      text-align: center;
+
+      &::before {
+        display: block;
+        position: absolute;
+        content: "";
+
+        width: 100%;
+        height: 5px;
+        border-radius: 2px;
+
+        top: -10px;
+        background-color: #6c6b6b;
+      }
+    }
+  }
+}
+
+//Animation - button power
+.power.active {
+  animation: power_on 0.4s linear forwards;
+}
+
+.power {
+  animation: power_off 0.4s linear forwards;
+}
+
+@keyframes power_on {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes power_off {
+  to {
+    transform: translateX(0%);
+  }
+}
+
+//Changement d'écran allumage
+.screen.on {
+  background-image: url("../assets/ville.png");
+  background-size: 295%;
+  background-repeat: no-repeat;
+  background-position: -105px -235px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//changement personnange allumage
+.player.on {
+  background-image: url("../assets/sprite.png");
+  background-size: 450%;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+
+.player.up {
+  animation: goUp 0.5s steps(4) forwards;
+}
+
+// Animation - Player
+//playerUp, playerRight, playerDown, playerLeft
+@keyframes goUp {
+  0% {
+    background-position: 0% 100%;
+  }
+
+  32% {
+    background-position: 0% 100%;
+  }
+
+  33% {
+    background-position: 33.333% 100%;
+  }
+
+  65% {
+    background-position: 33.333% 100%;
+  }
+
+  66% {
+    background-position: 66.666% 100%;
+  }
+
+  99% {
+    background-position: 66.666% 100%;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
+}
