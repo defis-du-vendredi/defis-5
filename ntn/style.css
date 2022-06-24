@@ -1,0 +1,445 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  background: #999;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bourgPalette {
+  width: 50vw;
+  height: 75vh;
+  margin: 10vh auto;
+  /* background-image: url(img/ville.png); */
+  /* background-position: auto; */
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* display: none; */
+  /* visibility: hidden; */
+}
+
+.btnOn {
+  width: 25px;
+  height: 10px;
+  border-radius: 2px;
+  position: absolute;
+  top: 9%;
+  left: 26%;
+  background: #222;
+  /* background: white; */
+  z-index: 10;
+}
+.gameBoy {
+  width: 20vw;
+  height: 60vh;
+  background: red;
+  border-radius: 2px 2px 50px 2px;
+}
+
+.screen {
+  width: 80%;
+  height: 45%;
+  margin: auto;
+  position: relative;
+  top: 40px;
+  background: #222;
+  border-radius: 5px;
+}
+
+.secondScreen {
+  width: 75%;
+  height: 75%;
+  margin: auto;
+  position: relative;
+  top: 30px;
+  background: #777;
+  border-radius: 5px;
+}
+
+.sacha {
+  width: 20px;
+  height: 20px;
+  background-image: url(img/sprite.png);
+  background-size: 100px 100px;
+  /* background-size: contain; */
+  background-position: 0% 2%;
+  /* background-position: 0% 35%; */
+  position: relative;
+  top: 69%;
+  left: 50%;
+  visibility: hidden;
+}
+
+.arrows {
+  position: absolute;
+  color: white;
+  top: 24%;
+  left: 5%;
+}
+.btnLight {
+  position: absolute;
+  top: 25%;
+  left: 2%;
+  width: 5px;
+  height: 5px;
+  border-radius: 10px;
+  background: red;
+  color: white;
+}
+
+.light {
+  position: absolute;
+  top: 29%;
+  left: 1%;
+  font-size: 8px;
+  color: white;
+}
+
+.GBPock {
+  width: 200px;
+  height: 30px;
+  /* border: 1px solid white; */
+  position: absolute;
+  top: 38%;
+  left: 30%;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.GBPock > * {
+  line-height: 180%;
+}
+
+.gb {
+  color: white;
+}
+
+.pkt {
+  background: white;
+  padding: 0.5px 15px;
+  text-transform: uppercase;
+}
+
+.cross {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  top: 100px;
+  left: 25px;
+  background: transparent;
+  /* border: 1px solid white; */
+}
+
+.directionUpDown {
+  width: 25%;
+  height: 50%;
+  background: #333;
+  border-radius: 5px;
+}
+
+.directionLR {
+  width: 50%;
+  height: 25%;
+  background: #333;
+  border-radius: 5px;
+}
+
+.goUp {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.goDown {
+  position: relative;
+  /* top: -8%; */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.goRight {
+  position: relative;
+  top: -90%;
+  left: 50%;
+}
+
+.goLeft {
+  position: relative;
+  top: -65%;
+  /* left: -6%; */
+}
+
+.btnsStSe {
+  /* border: 1px solid white; */
+  height: 10px;
+  width: 50%;
+  position: relative;
+  top: 16%;
+  left: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnsStSe > * {
+  width: 25%;
+  height: 5px;
+  background: #333;
+  border-radius: 10px;
+}
+
+.btnSs p {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.btnAB {
+  width: 100px;
+  height: 100px;
+  /* border: 1px solid #333; */
+  position: relative;
+  top: 3%;
+  left: 100%;
+  transform: translateX(-120%);
+}
+
+.btnAB > * {
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  background: #333;
+}
+
+.divBtnA {
+  position: relative;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.divBtnB {
+  position: relative;
+  top: -20px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.btnPlay p {
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  top: 20px;
+  left: 8px;
+}
+
+.nintendo {
+  position: absolute;
+  top: 43.5%;
+  left: 32%;
+  font-size: 20px;
+  color: white;
+  border: 1px solid white;
+  padding: 1px 10px;
+  border-radius: 9999px;
+}
+
+/* ------------------------GameOn------------------------------- */
+
+/* .btnLight bg green */
+/* .btnOn transform translate(-50px) */
+/* .secondScreen bgImage */
+.gameBoy.gameOn .btnLight {
+  background: green;
+}
+
+.gameBoy.gameOn .btnOn {
+  transform: translateX(10px);
+}
+
+.gameBoy.gameOn .secondScreen {
+  background-image: url(img/ville.png);
+}
+
+.gameBoy.gameOn .sacha {
+  visibility: visible;
+}
+
+/* --------------------------------SachaPosition------------------------------ */
+
+/* goDown */
+
+.secondScreen.Down .sacha {
+  animation: moveDown 1.5s linear infinite forwards;
+}
+
+@keyframes moveDown {
+  0% {
+    background-position: 0% 0%;
+  }
+  19.99% {
+    background-position: 0% 0%;
+  }
+  20% {
+    background-position: 35% 2%;
+  }
+  39.99% {
+    background-position: 35% 2%;
+  }
+  40% {
+    background-position: 70% 2%;
+  }
+  59.99% {
+    background-position: 70% 2%;
+  }
+  60% {
+    background-position: 100% 2%;
+  }
+  79.99% {
+    background-position: 100% 2%;
+  }
+  80% {
+    background-position: 125% 2%;
+  }
+  99.99% {
+    background-position: 125% 2%;
+  }
+  100% {
+    background-position: 125% 0%;
+  }
+}
+
+
+.secondScreen.moveUp .sacha {
+    animation: moveUp 1.5s linear infinite forwards;
+}
+
+@keyframes moveUp {
+    0% {
+      background-position: 0% 100%;
+    }
+    19.99% {
+      background-position: 0% 100%;
+    }
+    20% {
+      background-position: 35% 100%;
+    }
+    39.99% {
+      background-position: 35% 100%;
+    }
+    40% {
+      background-position: 70% 100%;
+    }
+    59.99% {
+      background-position: 70% 100%;
+    }
+    60% {
+      background-position: 100% 100%;
+    }
+    79.99% {
+      background-position: 100% 100%;
+    }
+    80% {
+      background-position: 125% 100%;
+    }
+    99.99% {
+      background-position: 125% 100%;
+    }
+    100% {
+      background-position: 125% 100%;
+    }
+  }
+
+
+  .secondScreen.moveRight .sacha {
+    animation: moveRight 1.5s linear infinite forwards;
+}
+
+@keyframes moveRight {
+    0% {
+      background-position: 0% 67%;
+    }
+    19.99% {
+      background-position: 0% 67%;
+    }
+    20% {
+      background-position: 35% 67%;
+    }
+    39.99% {
+      background-position: 35% 67%;
+    }
+    40% {
+      background-position: 70% 67%;
+    }
+    59.99% {
+      background-position: 70% 67%;
+    }
+    60% {
+      background-position: 100% 67%;
+    }
+    79.99% {
+      background-position: 100% 67%;
+    }
+    80% {
+      background-position: 125% 67%;
+    }
+    99.99% {
+      background-position: 125% 67%;
+    }
+    100% {
+      background-position: 125% 67%;
+    }
+  }
+
+
+  .secondScreen.moveLeft .sacha {
+    animation: moveLeft 1.5s linear infinite forwards;
+}
+
+@keyframes moveLeft {
+    0% {
+      background-position: 0% 35%;
+    }
+    19.99% {
+      background-position: 0% 35%;
+    }
+    20% {
+      background-position: 35% 35%;
+    }
+    39.99% {
+      background-position: 35% 35%;
+    }
+    40% {
+      background-position: 70% 35%;
+    }
+    59.99% {
+      background-position: 70% 35%;
+    }
+    60% {
+      background-position: 100% 35%;
+    }
+    79.99% {
+      background-position: 100% 35%;
+    }
+    80% {
+      background-position: 125% 35%;
+    }
+    99.99% {
+      background-position: 125% 35%;
+    }
+    100% {
+      background-position: 125% 35%;
+    }
+  }
+
